@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                     cwd: 'src/css/',
                     src: ['*.css', '!*.min.css'],
                     dest: 'dir/css/',
-              ext: '.min.css'
+                    ext: '.min.css'
             }]
           }
         },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
                 options: {
                 },
                 files: {
-                'index.html': 'index-dev.html'
+                'dir/index.html': 'src/index.html'
                 }
             }
         },
@@ -51,16 +51,52 @@ module.exports = function(grunt) {
                     'dir/index.html': 'dir/index.html'        // 'destination': 'source'
                 }
             }
+        }, 
+
+        // Responsive imagine
+        clean: {
+            dev: {
+                src: ['dir/images'],
+            },
+        },
+
+        responsive_images: {
+            dev: {
+                options: {
+                    engine: 'im',
+                    sizes: [
+                        {
+                            width: 400,
+                            quality: 80,
+                            suffix: '_2x'
+                        },
+
+                        { 
+                            width: 400,
+                            quality: 40,
+                            Suffix: '_1x'
+                        }
+                    ]
+                },
+            
+                files: [{
+                  expand: true,
+                  src: ['**.{jpg,gif,png}','P1000698.jpg', '**.jpg', '*.jpg'],
+                  cwd: 'src/images/',
+                  dest: 'dir/images/'
+                }]
+            }
         }
-      
     });
 
     // 3. load your plug-ins
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-inline-css');
+    grunt.loadNpmTasks('grunt-responsive-images');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // 4. progran starter (don't forget to add the plugin)
-    grunt.registerTask('default', ['cssmin','htmlmin']);
+    grunt.registerTask('default', ['cssmin','htmlmin', 'clean', 'responsive_images']);
 
 };
