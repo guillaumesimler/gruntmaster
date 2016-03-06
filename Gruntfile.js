@@ -81,12 +81,27 @@ module.exports = function(grunt) {
             
                 files: [{
                   expand: true,
-                  src: ['**.{jpg,gif,png}','P1000698.jpg', '**.jpg', '*.jpg'],
+                  src: ['**.{jpg,gif,png}','**/*.{jpg,gif,png}','P1000698.jpg', '**.jpg', '*.jpg', '**/*.jpg', '*/**.jpg'],
                   cwd: 'src/images/',
                   dest: 'dir/images/'
                 }]
             }
-        }
+        },
+
+
+        // Minify images
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'dir/images/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'dir/images/'
+        }]
+    }
+}
+
+
     });
 
     // 3. load your plug-ins
@@ -95,8 +110,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-inline-css');
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // 4. progran starter (don't forget to add the plugin)
-    grunt.registerTask('default', ['cssmin','htmlmin', 'clean', 'responsive_images']);
+    grunt.registerTask('default', ['cssmin','htmlmin', 'clean', 'responsive_images', 'imagemin']);
 
 };
