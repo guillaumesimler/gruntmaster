@@ -17,12 +17,24 @@ module.exports = function(grunt) {
              target: {
                 files: [{
                     expand: true,
-                    cwd: 'css/',
+                    cwd: 'src/css/',
                     src: ['*.css', '!*.min.css'],
-                    dest: 'css/',
+                    dest: 'dir/css/',
               ext: '.min.css'
             }]
           }
+        },
+
+        // inline CSS
+
+        inlinecss: {
+            main: {
+                options: {
+                },
+                files: {
+                'index.html': 'index-dev.html'
+                }
+            }
         },
 
         // Minify HTML
@@ -36,7 +48,7 @@ module.exports = function(grunt) {
           
                 // Dictionary of files
                 files: {                                   
-                    'index.html': 'index-dev.html'        // 'destination': 'source'
+                    'dir/index.html': 'dir/index.html'        // 'destination': 'source'
                 }
             }
         }
@@ -46,6 +58,7 @@ module.exports = function(grunt) {
     // 3. load your plug-ins
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-inline-css');
 
     // 4. progran starter (don't forget to add the plugin)
     grunt.registerTask('default', ['cssmin','htmlmin']);
