@@ -1,6 +1,10 @@
+// Master Grunt Package.json
+// Author: Guillaume Simler (for more info please check my Github Profile)
+// Configured in March 2013
+
 {
   "name": "Guillaume's master grunt package",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-clean": "^1.0.0",
