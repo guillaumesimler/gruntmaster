@@ -11,6 +11,22 @@ module.exports = function(grunt) {
 
         // 2. add your plug-ins' config here below
 
+        // Minify  css
+
+        cssmin: {
+             target: {
+                files: [{
+                    expand: true,
+                    cwd: 'css/',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'css/',
+              ext: '.min.css'
+            }]
+          }
+        },
+
+        // Minify HTML
+
         htmlmin: {                                     // Task
             dist: {                                      // Target
                 options: {                                 // Target options
@@ -28,9 +44,10 @@ module.exports = function(grunt) {
     });
 
     // 3. load your plug-ins
-   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     // 4. progran starter (don't forget to add the plugin)
-    grunt.registerTask('default', ['htmlmin']);
+    grunt.registerTask('default', ['cssmin','htmlmin']);
 
 };
