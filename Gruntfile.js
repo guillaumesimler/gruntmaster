@@ -11,8 +11,6 @@ module.exports = function(grunt) {
 
         // 2. add your plug-ins' config here below
 
-        // Minify  css
-
         cssmin: {
              target: {
                 files: [{
@@ -54,11 +52,6 @@ module.exports = function(grunt) {
         }, 
 
         // Responsive imagine
-        clean: {
-            dev: {
-                src: ['dir/images'],
-            },
-        },
 
         responsive_images: {
             dev: {
@@ -95,7 +88,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'dir/images/',
-                    src: ['**/*.{png,jpg,gif}'],
+                    src: ['**/*.{png,jpg,gif,JPG,GIF,PNG}'],
                     dest: 'dir/images/'
                 }]
             }
@@ -111,7 +104,27 @@ module.exports = function(grunt) {
                     dest: 'dir/js/'
                 }]
             }
-        }
+        },
+
+
+        // Housekeeping functions
+
+        clean: {
+            dev: {
+                src: ['dir/images'],
+            },
+        },
+
+        mkdir: {
+            all: {
+                options: {
+                    create: ['dir/js', 'dir/css', 'dir/images']
+                },
+            },
+        },
+
+
+
     
 
 
@@ -125,8 +138,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-mkdir');
 
     // 4. progran starter (don't forget to add the plugin)
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', ['imagemin']);
 
 };

@@ -44,7 +44,7 @@ Your files need to be clean (error free) to work with the plugins. So it would b
 * [CSS](http://www.css-validator.org/#validate_by_input)
 
 
-#### adapt
+##### adapt
 There is a need to adapt the file to your use case. I would advice to select the required tasks in the loading line:
 ```js
 grunt.registerTask('default', ['cssmin', 'imagemin'])
