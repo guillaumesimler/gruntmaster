@@ -97,9 +97,22 @@ module.exports = function(grunt) {
                     cwd: 'dir/images/',
                     src: ['**/*.{png,jpg,gif}'],
                     dest: 'dir/images/'
-        }]
-    }
-}
+                }]
+            }
+        },
+
+        // Minify Javascript
+        uglify: {
+            my_target: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/js/',
+                    src: '**/*.js',
+                    dest: 'dir/js/'
+                }]
+            }
+        }
+    
 
 
     });
@@ -111,8 +124,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // 4. progran starter (don't forget to add the plugin)
-    grunt.registerTask('default', ['cssmin','htmlmin', 'clean', 'responsive_images', 'imagemin']);
+    grunt.registerTask('default', ['uglify']);
 
 };
