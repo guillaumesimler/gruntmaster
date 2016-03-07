@@ -74,14 +74,14 @@ module.exports = function(grunt) {
                         { 
                             width: 400,
                             quality: 40,
-                            Suffix: '_1x'
+                            suffix: '_1x'
                         }
                     ]
                 },
             
                 files: [{
                   expand: true,
-                  src: ['**.{jpg,gif,png}','**/*.{jpg,gif,png}','P1000698.jpg', '**.jpg', '*.jpg', '**/*.jpg', '*/**.jpg'],
+                  src: ['**.{jpg,gif,png,JPG,GIF,PNG}'],
                   cwd: 'src/images/',
                   dest: 'dir/images/'
                 }]
