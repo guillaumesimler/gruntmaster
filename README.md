@@ -32,7 +32,7 @@ npm install grunt --save-dev
 
 Right now you need to use it like a normal **grunt** file (go on the console, select the folder and type grunt in). A good explanation could be found [there](https://24ways.org/2013/grunt-is-not-weird-and-hard/).
 
-The program would right now expect you to work in a **development folder (_src_)** and will have a **target folder (__dir__)**
+The program would right now expect you to work in a **development folder (_src_)** and will have a **target folder (__dir__)**. This can be changed by adapting the variables **source** and  **target**
 
 ###### A second word of caution
 The program uses the plugin __inlinecss__ which is powerful but might be surprising, especially with links. **Please have a look at your file and adapt it before you kick the htmlmnin**. 
@@ -60,7 +60,7 @@ The file uses the following plugins
 * [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 * [grunt-inline-css](https://github.com/jgallen23/grunt-inline-css) to inline CSS. **Beware of its consequence when using**
 * [grunt-responsive-images](https://github.com/andismith/grunt-responsive-images) to resize images
-* [grunt-responsive-images-extender](https://github.com/smaxtastic/grunt-responsive-images-extender) to insert the __srcset__ codes.
+* [grunt-responsive-images-extender](https://github.com/smaxtastic/grunt-responsive-images-extender) to insert the __srcset__ codes. **will be added later **git 
 * [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean) and [grunt-mkdir](https://www.npmjs.com/package/grunt-mkdir) for __folder housekeeping__
 
 The configuration of the plugins will be discussed in the [wiki section](https://github.com/guillaumesimler/gruntmaster/wiki)
@@ -68,6 +68,7 @@ The configuration of the plugins will be discussed in the [wiki section](https:/
 Latest Updates (more details on [Github](https://github.com/guillaumesimler/gruntmaster/commits/master))
 ------
 
+2016 03 07: Finish the first round of plugins installation
 2016 03 06: Initialize the project, start to implement the first plugings
 
 
