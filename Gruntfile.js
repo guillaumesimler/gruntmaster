@@ -112,21 +112,16 @@ module.exports = function(grunt) {
         clean: {
             dev: {
                 src: ['dir/images'],
-            },
+            }
         },
 
         mkdir: {
             all: {
                 options: {
                     create: ['dir/js', 'dir/css', 'dir/images']
-                },
-            },
-        },
-
-
-
-    
-
+                }
+            }
+        }
 
     });
 

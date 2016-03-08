@@ -20,7 +20,7 @@
     "grunt-contrib-uglify": "^1.0.0",
     "grunt-inline-css": "^0.1.5",
     "grunt-mkdir": "^1.0.0",
-    "grunt-responsive-images": "^0.1.7",
+    "grunt-responsive-images": "^0.1.7"
 
   }
 }
