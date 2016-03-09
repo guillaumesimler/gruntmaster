@@ -25,7 +25,7 @@ How to
 2. Install grunt using (for more information, please go to the [grunt page](http://gruntjs.com/getting-started))
 
 ```shell
-npm install grunt --save-dev
+npm install grunt
 ```
 
 ##### use 
