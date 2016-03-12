@@ -65,6 +65,9 @@ The file uses the following plugins
 
 The configuration of the plugins will be discussed in the [wiki section](https://github.com/guillaumesimler/gruntmaster/wiki)
 
+###### A fourth word of caution
+__responsive images_ needs a local installation of [Imagemagick](http://www.imagemagick.org/script/binary-releases.php#windows)
+
 Latest Updates (more details on [Github](https://github.com/guillaumesimler/gruntmaster/commits/master))
 ------
 
